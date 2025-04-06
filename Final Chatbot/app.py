@@ -7,9 +7,9 @@ import os
 app = FastAPI()
 
 # Twilio Credentials
-TWILIO_ACCOUNT_SID = "AC2a6911ff58bb9290ce1129a2dda8e55e"
-TWILIO_AUTH_TOKEN = "ba29ba18f7ecc9f6da78b07ac4acf625"
-TWILIO_WHATSAPP_NUMBER = "whatsapp:+14155238886"  # Twilio Sandbox Number
+TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_WHATSAPP_NUMBER = os.getenv("TWILIO_WHATSAPP_NUMBER")
 
 twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
