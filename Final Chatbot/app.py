@@ -37,6 +37,10 @@ MESSAGES = {
 VALID_GENDERS = ["male", "female"]
 VALID_FEDERATIONS = ["chyfed", "mhondoro", "glengate", "highnorrah"]
 
+@app.get("/")
+async def read_root():
+    return {"message": "Welcome to the API"}
+
 @app.post("/webhook")
 async def twilio_webhook(From: str = Form(...), Body: str = Form(...)):
     sender_id = From
